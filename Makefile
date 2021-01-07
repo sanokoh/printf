@@ -6,7 +6,7 @@
 #    By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/04 14:17:10 by ksano             #+#    #+#              #
-#    Updated: 2021/01/06 14:38:16 by ksano            ###   ########.fr        #
+#    Updated: 2021/01/07 12:11:33 by ksano            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,23 +38,11 @@ clean:
 	$(RM) $(OBJECTS) libft/*.o
 	rm printf ft_printf
 
-testclean:
-	rm printf ft_printf
-
 fclean:
 	$(RM) $(OBJECTS) $(NAME) libft/libft.a libft/*.o
 
 re: fclean all
 
-printf:
-	gcc -Wno-format -D TEST -o printf $(FILES) libft/libft.a
-
-ft_printf:
-	gcc -Wno-format -g -D TEST -D FT_PRINTF -o ft_printf $(FILES) libft/libft.a
-
-test:
-	./test.sh
-
 .PHONY:
-	all clean fclean re test testclean
+	all clean fclean re printf ft_printf test testclean
 
