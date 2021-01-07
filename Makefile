@@ -6,7 +6,7 @@
 #    By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/04 14:17:10 by ksano             #+#    #+#              #
-#    Updated: 2021/01/07 12:11:33 by ksano            ###   ########.fr        #
+#    Updated: 2021/01/07 12:21:12 by ksano            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,6 @@ $(NAME): $(OBJECTS)
 
 clean:
 	$(RM) $(OBJECTS) libft/*.o
-	rm printf ft_printf
 
 fclean:
 	$(RM) $(OBJECTS) $(NAME) libft/libft.a libft/*.o
@@ -44,5 +43,5 @@ fclean:
 re: fclean all
 
 .PHONY:
-	all clean fclean re printf ft_printf test testclean
+	all clean fclean re
 
