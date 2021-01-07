@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 12:10:13 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/07 11:48:02 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/07 11:53:24 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,7 @@ int				ft_printf(const char *format, ...)
 		{
 			itr = read_args(&args, itr, ap);
 			if (args.c == 0)
-			{
-				res +=ft_putstr((char *)format);
 				break ;
-			}
 			res += ft_put_conversion(&args, ap);
 			continue ;
 		}
