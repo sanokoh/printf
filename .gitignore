@@ -1,7 +1,7 @@
 # main.c
+# test.sh
 a.out
 *.txt
-test.sh
 *.a
 *.o
 ft_printf
