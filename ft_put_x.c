@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 10:34:08 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/08 13:32:35 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/09 17:14:13 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ int			ft_put_x(t_args *args, va_list ap)
 	x = va_arg(ap, unsigned int);
 	args->c == 'x' ? s = ft_itoa_base(x, "0123456789abcdef") : 0;
 	args->c == 'X' ? s = ft_itoa_base(x, "0123456789ABCDEF") : 0;
+	if (!s)
+		return (res);
 	args->len = ft_strlen(s);
 	args->padding = (args->len < args->precision) ?
 		args->precision - args->len : 0;

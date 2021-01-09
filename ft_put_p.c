@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 10:26:05 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/08 13:42:13 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/09 18:53:18 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int			ft_putchar_p(t_args args, char *s)
 	int		res;
 
 	res = 0;
-	if (args.align_left == 0 && args.zero_filling == 0)
+	if (args.align_left == 0)
 	{
 		while ((args.width--) - args.putlen > 0)
 			res += ft_putchar(' ');
@@ -28,8 +28,6 @@ int			ft_putchar_p(t_args args, char *s)
 		return (res);
 	while (args.padding-- > 0)
 		res += ft_putchar('0');
-	if (args.zero_filling == 1)
-		res += ft_putchar_zero_filling(&args);
 	res += ft_putstr(s);
 	if (args.align_left == 1)
 		res += ft_putchar_align_left(&args);
@@ -46,6 +44,8 @@ int			ft_put_p(t_args *args, va_list ap)
 	s = NULL;
 	p = va_arg(ap, unsigned long);
 	s = ft_itoa_base(p, "0123456789abcdef");
+	if (s == NULL)
+		return (res);
 	if (args->has_precision && args->precision == 0)
 		args->len = ft_strlen("0x");
 	else

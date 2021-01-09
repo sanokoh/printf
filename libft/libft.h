@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 09:44:29 by ksano             #+#    #+#             */
-/*   Updated: 2020/12/30 16:52:20 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/09 16:55:13 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdint.h>
-
-
 
 typedef enum {
 	FALSE = 0,
@@ -60,7 +58,6 @@ void				*ft_memset(void *b, int c, size_t len);
 int					ft_putchar(char c);
 int					ft_putstr(char *str);
 int					ft_putstrl(char *str, int len);
-
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
@@ -81,9 +78,7 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_toupper(int c);
 int					ft_tolower(int c);
-
 char				*ft_itoa_base(uintmax_t n, char *base);
 size_t				ft_intlen_base(uintmax_t n, char *base);
-
 
 #endif
