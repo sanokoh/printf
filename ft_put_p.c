@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 10:26:05 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/06 20:11:12 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/08 13:42:13 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,6 @@ int			ft_put_p(t_args *args, va_list ap)
 		args->precision - args->len + ft_strlen("0x") : 0;
 	args->putlen = args->len + args->padding;
 	res += ft_putchar_p(*args, s);
+	free(s);
 	return (res);
 }

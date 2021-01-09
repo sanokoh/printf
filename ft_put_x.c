@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/06 10:34:08 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/06 20:07:59 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/08 13:32:35 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,6 @@ int			ft_put_x(t_args *args, va_list ap)
 	res += ft_putchar_x(*args, s);
 	if (args->align_left == 1)
 		res += ft_putchar_align_left(args);
+	free(s);
 	return (res);
 }
