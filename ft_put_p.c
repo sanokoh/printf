@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 10:26:05 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/10 16:57:25 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/10 17:18:06 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ int			ft_put_p(t_args *args, va_list ap)
 	if (s == NULL)
 		return (res);
 		//***********はずしたらどうなるか？**************
-	// if (args->has_precision && args->precision == 0)
-	// 	args->len = ft_strlen("0x");
-	// else
+	if (args->has_precision && args->precision == 0 && p == 0)
+		args->len = ft_strlen("0x");
+	else
 		//***********はずしたらどうなるか？**************
-
 		args->len = ft_strlen(s) + ft_strlen("0x");
+	// printf("args->len: %d\n", args->len);
 	args->padding = (args->len < args->precision) ?
 		args->precision - args->len + ft_strlen("0x") : 0;
 	args->putlen = args->len + args->padding;
