@@ -6,7 +6,7 @@
 #    By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/04 14:17:10 by ksano             #+#    #+#              #
-#    Updated: 2021/01/10 17:30:00 by ksano            ###   ########.fr        #
+#    Updated: 2021/01/10 17:51:12 by ksano            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,6 @@ CC		= gcc
 INCLUDES= -I includes
 CFLAGS	= -Wall -Wextra -Werror $(INCLUDES)
 
-
 all: $(NAME)
 
 $(NAME): $(OBJECTS)
@@ -36,23 +35,12 @@ $(NAME): $(OBJECTS)
 
 clean:
 	$(RM) $(OBJECTS) libft/*.o
-	rm printf ft_printf
 
 fclean:
 	$(RM) $(OBJECTS) $(NAME) libft/libft.a libft/*.o
 
 re: fclean all
 
-
-printf:
-	gcc -Wno-format -D TEST -o printf main.c libftprintf.a
-
-ft_printf:
-	gcc -Wno-format -g -D TEST -D FT_PRINTF -o ft_printf main.c libftprintf.a
-
-test:
-	./test.sh
-
 .PHONY:
-	all clean fclean re ft_printf printf test
+	all clean fclean re
 
