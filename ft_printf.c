@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 12:10:13 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/10 12:55:15 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/10 13:11:23 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int				ft_printf(const char *format, ...)
 	va_list		ap;
 
 	if (!format || *format == '\0')
-		return (-1);
+		return (0);
 	itr = (char *)format;
 	res = 0;
 	va_start(ap, format);
@@ -30,8 +30,9 @@ int				ft_printf(const char *format, ...)
 		if (*itr == '%')
 		{
 			itr = read_args(&args, itr, ap);
-			if (args.c == 0 || args.width < 0)
+			if (args.c == 0)
 				return (-1);
+				// break ;:
 			res += ft_put_conversion(&args, ap);
 			continue ;
 		}
