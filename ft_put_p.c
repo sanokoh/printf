@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 10:26:05 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/09 19:29:35 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/09 23:08:03 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,12 @@ int			ft_put_p(t_args *args, va_list ap)
 	s = ft_itoa_base(p, "0123456789abcdef");
 	if (s == NULL)
 		return (res);
+		//***********はずしたらどうなるか？**************
 	if (args->has_precision && args->precision == 0)
 		args->len = ft_strlen("0x");
 	else
+		//***********はずしたらどうなるか？**************
+
 		args->len = ft_strlen(s) + ft_strlen("0x");
 	args->padding = (args->len < args->precision) ?
 		args->precision - args->len + ft_strlen("0x") : 0;
@@ -57,3 +60,6 @@ int			ft_put_p(t_args *args, va_list ap)
 	free(s);
 	return (res);
 }
+
+
+//何故かワカモレ上でpft_2019のmake reが失敗する
