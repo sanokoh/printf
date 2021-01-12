@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 22:30:20 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/10 12:55:30 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/13 00:36:19 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,7 @@ char	*ft_get_width(t_args *args, char *itr, va_list ap)
 		args->width = ft_atoi(itr);
 		itr += ft_get_digits(args->width);
 	}
+	if (ft_get_digits(args->width) >= 10)
+		args->error = 1;
 	return (itr);
 }

@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 10:45:10 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/07 11:31:12 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/12 23:56:11 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ int					ft_put_u(t_args *args, va_list ap)
 	res = 0;
 	u = (unsigned int)va_arg(ap, int);
 	args->len = ft_get_digits(u);
-	if (args->has_precision == 1 && args->precision == 0)
-		args->len = 0;
 	args->padding = (args->len < args->precision) ?
 		args->precision - args->len : 0;
 	args->putlen = args->len + args->padding;

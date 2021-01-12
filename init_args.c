@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 22:27:50 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/06 20:08:20 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/13 00:10:55 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,5 @@ void	init_args(t_args *args)
 	args->padding = 0;
 	args->align_left = 0;
 	args->zero_filling = 0;
+	args->error = 0;
 }

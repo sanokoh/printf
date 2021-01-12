@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 10:48:19 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/07 11:28:32 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/13 00:10:42 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct	s_args
 	int			padding;
 	int			align_left;
 	int			zero_filling;
+	int			error;
 }				t_args;
 
 int				ft_printf(const char *format, ...);
