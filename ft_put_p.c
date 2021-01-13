@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/30 10:26:05 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/10 17:35:09 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/13 17:46:44 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,15 @@ int			ft_putchar_p(t_args args, char *s)
 			res += ft_putchar(' ');
 	}
 	res += ft_putstr("0x");
-	if (args.has_precision && args.precision == 0 && *s == '0')
+	if (args.has_precision && args.precision == 0 && *s == '0' &&
+		args.align_left == 0)
 		return (res);
+	else if ((args.has_precision && args.precision == 0 && *s == '0' &&
+		args.align_left == 1))
+		{
+			res += ft_putchar_align_left(&args);
+			return (res);
+		}
 	while (args.padding-- > 0)
 		res += ft_putchar('0');
 	res += ft_putstr(s);
@@ -39,6 +46,8 @@ int			ft_put_p(t_args *args, va_list ap)
 	long	p;
 	int		res;
 	char	*s;
+	// printf("width: %d\n", args->width);
+	// printf("left: %d\n", args->align_left);
 
 	res = 0;
 	s = NULL;
