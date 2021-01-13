@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 18:31:17 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/06 20:25:40 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/13 17:59:00 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ int			ft_put_percent(t_args *args)
 	{
 		while (width-- > 1)
 			res += ft_putchar(' ');
+	}
+	if (args->zero_filling == 1 && args->has_precision == 0)
+	{
+		res += ft_putchar_zero_filling(args);
 	}
 	res += ft_putchar('%');
 	if (args->align_left == 1)
