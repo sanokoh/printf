@@ -6,3 +6,4 @@ a.out
 *.o
 ft_printf
 printf
+_*

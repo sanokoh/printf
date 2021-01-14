@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 22:30:54 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/10 12:23:57 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/14 22:49:22 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*read_args(t_args *args, char *itr, va_list ap)
 		return (itr);
 	itr++;
 	init_args(args);
+	if (*itr == ' ')
+		ft_putchar(' ');
 	while (*itr == ' ')
 		itr++;
 	if (ft_strchr(FLAG, *itr))
